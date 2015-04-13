@@ -39,7 +39,7 @@ function TimeOnline:SavePlayer(player)
   cmd:Execute()
 end
 
-function TDM:LoadPlayer(player)
+function TimeOnline:LoadPlayer(player)
   local qry = SQL:Query( "SELECT hours, minutes FROM players WHERE steamID = (?) LIMIT 1" )
   qry:Bind( 1, player:GetSteamId().id )
   local result = qry:Execute()
